@@ -30,7 +30,7 @@ html,body{
 #root {
   width: 100%;
   height: 100%;
-  /* border: 2px solid black; */
+  border: 2px solid rgb(227, 0, 0);
   position: relative;
   display:flex;
   align-items: center; 
@@ -39,6 +39,7 @@ html,body{
   /* border: 2px solid red; */
   padding-top: 60px;
   /* padding: 0 0; */
+  overflow: hidden;
 
   
   background-color: #000000;
@@ -114,7 +115,7 @@ width: 100%;
 height: 100%;
 /* border: 2px solid red; */
 /* padding: 10px; */
-padding-bottom: 80px;
+padding-bottom: 50px;
   overflow-y: scroll;
   position: relative;
   overflow-x: hidden;
@@ -132,16 +133,20 @@ a{
   text-decoration: none;
   color: wheat;
 }
+.content-oncard{
+  /* width: 80%; */
+  display: flex;
+}
 
 .post{
 
   width: 100%;
-  height: fit-content;
+  min-height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  padding: 5px;
+  padding: 2px;
   padding-bottom: 50px;
   animation-name: post;
   animation-duration: .5s;
@@ -413,3 +418,26 @@ justify-content: center;
   100% { transform: rotate(360deg)}
 }
       
+
+
+
+
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
