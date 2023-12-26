@@ -12,6 +12,7 @@ import Select from './Select';
 import Signup from "./Signup";
 import PostForm from "./post-form/postForm";
 import  AuthLayout from "./authProtection";
+import Homepage from "./Homepage";
 
 export {
 
@@ -27,5 +28,6 @@ export {
     Select,
     Signup,
     PostForm,
-    AuthLayout
+    AuthLayout,
+    Homepage
 }

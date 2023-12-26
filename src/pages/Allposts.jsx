@@ -6,14 +6,15 @@ function AllPosts() {
     const [posts, setPosts] = useState([])
     const [loader,setLoader] = useState(true)
 
-    useEffect(() => {}, [])
+    useEffect(() => {
     appwriteService.getPosts([]).then((posts) => {
         setLoader(true)
         if (posts) {
             setPosts(posts.documents)
             setLoader(false)
         }
-    },[])
+    })
+},[])
 
 
     if (loader) return <div className="loadercomponent"> <span className="loader"></span></div>
@@ -22,11 +23,14 @@ function AllPosts() {
   return (
     
         <Container>
+            <div className="postcontainer">
                 {posts.map((post) => (
                     <div key={post.$id} className='p-2 w-1/4'>
                         <PostCard {...post} />
                     </div>
+                    
                 ))}
+                </div>
             </Container>
    
   )
