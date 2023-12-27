@@ -16,7 +16,7 @@ import React, { useId } from 'react'
   return (
     <div className='inputandlabel'>
         {
-            label && <label  htmlFor={id}>{label}</label> 
+            label && <h2  htmlFor={id}>{label}</h2> 
         }
         
         {

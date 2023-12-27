@@ -21,7 +21,7 @@ export default function PostForm({ post }) {
     const submit = async (data) => {
         if (post) {
             const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
-            console.log(data)
+            console.log('post image:'+ data)
 
             if (file) {
                 appwriteService.deleteFile(post.featuredImage);
@@ -32,11 +32,14 @@ export default function PostForm({ post }) {
                 featuredImage: file ? file.$id : undefined,
             });
 
+            console.log( 'dbpost',dbPost)
+
             if (dbPost) {
                 navigate(`/post/${dbPost.$id}`);
             }
         } else {
             const file = await appwriteService.uploadFile(data.image[0]);
+            console.log(file)
 
             if (file) {
                 const fileId = file.$id;
@@ -72,33 +75,41 @@ export default function PostForm({ post }) {
     }, [watch, slugTransform, setValue]);
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
+        
+        <form onSubmit={handleSubmit(submit)} className="postform">
+            <div className="postforminputs">
                 <Input
-                    label="Title :"
-                    placeholder="Title"
+                    // label="Title :"
+                    placeholder="Your Post's Title..."
                     className="mb-4"
                     {...register("title", { required: true })}
                 />
                 <Input
-                    label="Slug :"
-                    placeholder="Slug"
+                    // label="Slug :"
+                    placeholder="Your Post's Slug"
                     className="mb-4"
+                    disabled
                     {...register("slug", { required: true })}
                     onInput={(e) => {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
-                <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
-            </div>
-            <div className="w-1/3 px-2">
+
+                <div className="imagepostform">
+                    {/* <p>Upload Thumbnail Image :</p> */}
                 <Input
-                    label="Featured Image :"
+                    label="Upload Image : "
                     type="file"
                     className="mb-4"
                     accept="image/png, image/jpg, image/jpeg, image/gif"
                     {...register("image", { required: !post })}
                 />
+                </div>
+
+                <RTE  name="content" control={control} defaultValue={getValues("content")} />
+            </div>
+            <div className="fileandsubmit">
+               
                 {post && (
 
 
@@ -114,12 +125,12 @@ export default function PostForm({ post }) {
                 )}
                 <Select
                     options={["active", "inactive"]}
-                    label="Status"
-                    className="mb-4"
+                    label="Post Visibility"
+                    className="postformstatus"
                     {...register("status", { required: true })}
                 />
                 <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
-                    {post ? "Update" : "Submit"}
+                    {post ? "Update" : "Create Post"}
                 </Button>
             </div>
         </form>

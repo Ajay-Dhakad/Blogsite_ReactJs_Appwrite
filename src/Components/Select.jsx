@@ -10,9 +10,9 @@ function Select({
 }, ref) {
     const id = useId()
   return (
-    <div id='selectoption'>
+    <div className='select'>
         {
-            label && <label htmlFor={id}  className=''></label>
+            label && <label htmlFor={id}  className=''>{label} : </label>
         }
 
         <select  id={id } ref={ref} className={`select ${classname}`} {...props}>
