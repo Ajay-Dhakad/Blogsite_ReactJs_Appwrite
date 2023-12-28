@@ -9,8 +9,8 @@ function Homepage() {
   return (
     <div className='homepage'>  
       
-      <div class="main">
-  <h1>Thought Cloud <div class="roller">
+      <div className="main">
+  <h1>Thought Cloud <div className="roller">
     <span id="rolltext">Post What Ever<br/>
     You Like 💗<br/>
     You Think 🤔<br/>
@@ -29,9 +29,9 @@ function Homepage() {
   
   <Link to={user ? '/allposts' : '/login'}>
   <div>
-    <button class="btn btn--light">
-      <span class="btn__inner">
-        <span class="btn__slide"></span>
+    <button className="btn btn--light">
+      <span className="btn__inner">
+        <span className="btn__slide"></span>
         <span className="btn__content">{ user ? 'Explore' : "Login / JoinUs!" }</span>
       </span>
     </button>
