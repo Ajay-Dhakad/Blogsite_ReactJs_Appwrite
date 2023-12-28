@@ -4,7 +4,7 @@ import Input from './Input';
 import authService from '../appwrite/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { login as authLogin } from '../Store/authSlice';
+import { login as authLogin } from '../store/authSlice';
 import Button from './Button';
 
 function Signup() {
