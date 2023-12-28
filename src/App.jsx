@@ -6,7 +6,7 @@ import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
 import { useDispatch } from 'react-redux'
 import authService from './appwrite/auth'
-import { login, logOut } from './store/authSlice.js'
+import { login, logOut } from './Store/authSlice.js'
 
 function App() {
 
