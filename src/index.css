@@ -699,8 +699,9 @@ header ul{
   justify-content: center;
   flex-direction: row-reverse;
   flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px;
+  gap: 1rem;
+  padding: 20px;
+  overflow: scroll;
 }
 
 .postcard{
