@@ -27,7 +27,7 @@ function App() {
         setLoader(false)
       }
       else {
-        dispatch(logOut())
+        dispatch(logOut())  
         setLoader(false)
       }
     })
@@ -43,19 +43,22 @@ function App() {
 
  
  
- <Header/>
+ 
  <main>
+ <Header/>
 
   {
 
  !loader ? <Outlet/> : <div className='loadercomponent'> <span id="loader"></span></div>
+ 
 
   }
 
   
+<Footer/>
 
 </main>
-<Footer/>
+
 
 </>
 

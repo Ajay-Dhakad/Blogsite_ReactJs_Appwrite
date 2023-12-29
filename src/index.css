@@ -5,6 +5,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* z-index: 1; */
   
 }
 
@@ -38,12 +39,87 @@ html,body{
    flex-direction: column; 
   /* border: 2px solid red; */
   padding-top: 60px;
+
   /* padding: 0 0; */
   overflow: hidden;
+  background: linear-gradient(179.4deg, rgb(12, 20, 69) -16.9%, rgb(71, 30, 84) 119.9%);
+
+
 
   
   background-color: #000000;
+  
 }
+
+.phonenav{
+ background-color: rgba(0, 0, 0, 0.842);
+ width:100vw;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ position:fixed;  
+ top: 60px;
+ /* left:0px; */
+ display: none;
+ height:10%;
+ /* bottom: 50px; */
+ z-index: 999;
+ 
+
+}
+
+.phonenav ul{
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+.phonenav button{
+
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 5vw;
+}
+
+
+
+i{
+  display: none;
+}
+
+
+
+.hidphonenav{
+  display: none;
+}
+
+@media (max-width:690px) {
+  
+  .navitem{
+    display: none;
+  }
+  .phonenav{
+    display: block;
+  }
+
+  i{
+    display: block;
+    font-size: 25px;
+    padding: 1px;
+  }
+
+}
+
+
+
 
 @keyframes webcontent {
 
@@ -54,7 +130,7 @@ transform: scale(1);  }
   
 }
 
-@keyframes post {
+@keyframes dimtolight {
 
   from{
 opacity: 0;
@@ -83,15 +159,14 @@ section{
   align-items: center;
   margin-top:10px ;
   justify-content: center;
-  position: absolute;
-  bottom: 0px;
-  padding: 5px;
+  position: fixed;
+  
+  bottom: -.5px;
+  /* padding: 5px; */
   /* display: none; */
-
-
-
-
 }
+
+
 
 section ul{
 
@@ -106,6 +181,9 @@ section ul li:hover{
 
   color: aqua;
 }
+
+
+
 main{
 display: flex;
 justify-content: center;
@@ -123,14 +201,21 @@ padding-bottom: 50px;
   overflow-y: scroll;
   position: relative;
   overflow-x: hidden;
+  
   /* background:; */
   /* background: linear-gradient(to right, #868f96 0%, #596164 100%); */
-  background-color: #b5b5c7;
+  /* background-color: #b5b5c7; */
+background-color: transparent;
+/* z-index: -1; */
+  
   /* margin-bottom: 10px; */
  
 
 
 }
+
+
+
 
 a{
   /* color: red; */
@@ -144,7 +229,7 @@ a{
 
 .postform {
 
-  width: 100%;
+  width: 99%;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -154,6 +239,7 @@ a{
   /* transform: scale(0.5); */
   flex-wrap: wrap;
   gap: 10px;
+  color: white;
  
 
 
@@ -193,6 +279,12 @@ a{
   
 }
 
+@media (max-width:440px) {
+  .postforminputs input{
+    width: 100%;
+  }
+}
+
 .postform label{
   font-size: 20px;
   text-align: center;
@@ -205,8 +297,10 @@ a{
   padding: 0 5px;
   outline: none;
   border: none;
+
+  color: white;
   background-color: transparent;
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid rgb(255, 255, 255);
 }
 
 .postform select:hover{
@@ -287,7 +381,7 @@ input[type="file"]::file-selector-button:active {
   flex-direction: column;
   padding: 2px;
   padding-bottom: 50px;
-  animation-name: post;
+  animation-name: dimtolight;
   animation-duration: .5s;
   animation-fill-mode:both;
   animation-iteration-count: 1;
@@ -316,8 +410,9 @@ header{
   justify-content: space-between;
   width: 100%;
   height: 60px;
-  background-color:#1D3557
-;
+  /* background-color:#1D3557
+; */
+background-color: transparent;
 position: fixed;
 top: 0;
   color: white;
@@ -325,6 +420,7 @@ top: 0;
   /* border: 2px solid red; */
   transition: .2s all ease-in-out;
   font-weight: bold;
+  
   /* margin-bottom: 10px; */
   
 }
@@ -335,6 +431,7 @@ header button {
   background-color: transparent;
   border: none;
   color: white;
+  transition: .5s all;
   font-size: 17px;
   margin-left: 20px;
   font-weight: bold;
@@ -346,7 +443,8 @@ header button {
 
 header button:hover{
   /* color: rgb(9, 130, 211); */
-  background-color: #89908a
+  background-color:#ff4655;
+  
   /* text-decoration: ; */
 }
 
@@ -365,7 +463,13 @@ header #logout{
   /* gap: 20px; */
   align-items: center;
   /* border: 2px solid red; */
-  background-color: #1D3557;
+  /* background-color: #1D3557; */
+  background-color: transparent;
+  animation-name: webcontent;
+  animation-duration: 1s;
+  animation-fill-mode:both;
+  animation-iteration-count: 1;
+  
   /* position: absolute; */
 }
 
@@ -432,7 +536,21 @@ header #logout{
   }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 629px){
+
+  .btn{
+    transform: scale(.9);
+  }
+
+  .main{
+    height: 25%;
+  }
+
+  .main h1{
+    font-size: 2rem;
+  }
+  
+
   h1{
   text-align:center;
   text-transform: uppercase;
@@ -441,7 +559,7 @@ header #logout{
 }
   
   .roller{
-  height: 2.6rem; 
+  height: 2.3rem; 
   line-height: 2.125rem;  
   }
   
@@ -704,42 +822,49 @@ header ul{
   overflow: scroll;
 }
 
+
 .postcard{
 
   width: 450px;
-  /* min-width: 300px; */
-  /* height: 350px; */
-  min-height: 300px;
+  
+  position: relative;
   background-color:rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  text-align: start;
+  justify-content: center;
+  text-align: center;
+  white-space:no-wrap;
   text-overflow: ellipsis;
   align-items: center;
-  font-size: 20px;
+  font-size: 1rem;
   word-break:keep-all;
   transition: .2s all;
   animation-name: webcontent;
   animation-duration: .5s;
   animation-fill-mode:both;
   animation-iteration-count: 1;
-  border-radius: 20px;
-  overflow: hidden;
-  /* padding-bottom: 10px; */
-  /* border: 2px solid red; */
+  border-radius: 10px;
+  overflow:hidden;
+  transition: .2s all ease-in-out;
+ 
+}
+
+.postcard:hover{
+
+  height: fit-content;
+  box-shadow: rgba(199, 2, 234, 0.3) 0px 8px 16px;
+  background-color:#2c2e3700;
+  scale: .99;
+  
+
 }
 
 .postimage{
 
   width: 100%;
-  /* position: absolute; */
   height: 70%;
 
-  /* height:auto; */
-  /* margin-bottom: 2%; */
-  /* height: 90%; */
 
 }
 
@@ -748,37 +873,263 @@ header ul{
   height: 100%;
 }
 
-.login{
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 600px;
-  height: 600px;
-}
-
-.loginform{
+.titlepostcard{
   width: 100%;
-  height: fit-content;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 40px;
+  text-overflow:ellipsis;
+  background-color:#ffffff;
+  color: rgb(0, 0, 0);
+  
+}
+
+@media (max-width:960px) {
+
+  .postcard{
+    width: 400px;
+    font-size: 15px;
+    height: fit-content;
+  }
+  
+}
+
+@media (max-width:860px) {
+
+  .postcard{
+    width: 300px;
+    height: fit-content;
+    font-size: .7rem;
+
+  }
+}
+  
+
+  @media (max-width:660px) {
+
+    .postcard{
+      width: 40vw;
+      height: fit-content;
+  
+    }
+    
 
 }
 
-.inputandlabel{
+@media (max-width:560px) {
 
-width: 600px;
-height: fit-content;
+  .postcard{
+    width: 220px;
+    height: fit-content;
+    font-size: .57rem;
+
+  }
+  
+
+}
+
+@media (max-width:500px) {
+
+  .postcard{
+    width: 90vw;
+    height: fit-content;
+    font-size: .76rem;
 display: flex;
 align-items: center;
 justify-content: center;
+overflow: auto;
+  }
+
+  .titlepostcard{
+    height: fit-content ;
+  }
+  
+
+}
+
+.loginform{
+  width: 500px;
+  
+
+  height: 300px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  gap: 1rem;
+  /* padding:5 10px; */
+  /* border: 2px solid red; */
+  background-color: #0000005c;
+  color: white;
+  border-radius: 10px;
+  position: relative;
+  /* background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); */
+  
+
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset; */
+  text-align: center;
+  /* padding: 10px 10px; */
 
 }
 
 
+.loginform input{
+
+  width: 80%;
+  /* min-width: 50%; */
+  height: 40px;
+  font-size: 20px;
+  outline: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.formerror{
+
+  color: red;
+  animation-name: errorpop;
+  animation-duration: 1s;
+}
+
+@keyframes errorpop {
+  
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+
+}
+
+.loginform h2{
+  font-size: 1.4rem;
+}
+
+.loginform input[type=submit]{
+
+  width: 50%;
+  background-color: rgb(42, 184, 42);
+  border: none;
+color: white;
+font-size: 25px;
+}
+
+  
+
+
+.loginform input[type=submit]:hover{
+  background-color: #08820c;
+}
+
+.loginform a{
+  color: red;
+}
+
+.Login{
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+  justify-content: center;
+  position: relative;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  animation-name: dimtolight;
+  animation-duration: .5s;
+  animation-fill-mode:both;
+  color: white;
+  animation-iteration-count: 1;
+  
+}
+
+
+
+.signup{
+  width: 100vw;
+  height: 100%;
+  padding: 10px;
+  gap: 10px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  /* border: 2px solid red; */
+  animation-name: dimtolight;
+  animation-duration: .5s;
+  animation-fill-mode:both; 
+    /* background-color: #0000005c; */
+
+  color: white;
+  animation-iteration-count: 1;
+
+}
+
+
+
+.signupform{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  height: 350px;
+  background-color: #0000005c;
+  gap: 10px;
+  border-radius: 10px;
+
+  padding: 5px;
+  color: white;
+
+}
+
+.signupform a{
+  color: red;
+}
+
+.signupform input{
+
+  width: 80%;
+  /* min-width: 50%; */
+  height: 40px;
+  font-size: 20px;
+  outline: none;
+  border-radius: 5px;
+  text-align: center;
+
+
+}
+
+.signupform button[type=submit]{
+
+  
+  width: 60%;
+  height: 40px;
+  background-color: rgb(42, 184, 42);
+  border: none;
+color: white;
+border-radius: 10px;
+font-size: 25px;
+transition: .2s all ease-in-out;
+
+}
+
+
+.signupform button[type=submit]:hover{
+  background-color:#199417;
+
+}
+
+.signupform a:hover{
+text-decoration: underline;
+}
+
+.signupform h2{
+  font-size: 1.4rem;
+}
 /* loader */
 
 .loadercomponent{
@@ -788,8 +1139,10 @@ justify-content: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(31, 29, 29);
+  /* background-color: rgb(31, 29, 29); */
+  background-color: transparent;
   position: absolute; 
+  
   color: white;
 
 }
@@ -827,3 +1180,25 @@ justify-content: center;
   100% { transform: rotate(360deg)}
 }
       
+
+
+
+@media (max-width:510px) {
+
+  .Login{
+    padding: 0 5px;
+  }
+
+   .loginform{
+    width: 100%;
+    /* height: 100%; */
+
+  }
+
+  .signupform {
+    width: 100%;
+  }
+
+  
+
+}

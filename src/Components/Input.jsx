@@ -14,7 +14,7 @@ import React, { useId } from 'react'
     const id = useId()
 
   return (
-    <div className='inputandlabel'>
+    <>
         {
             label && <h2  htmlFor={id}>{label}</h2> 
         }
@@ -22,9 +22,9 @@ import React, { useId } from 'react'
         {
             <input type={type} placeholder={placeholder} className={`inputbox ${classname}`} name="" id={id} {...props}  ref={ref}/>
         }
-
+</>
        
-    </div>
+    
   )
 })
 

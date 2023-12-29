@@ -7,6 +7,7 @@ function Homepage() {
     const user = useSelector(state => state.auth.status)
     // console.log(user)
   return (
+  <> 
     <div className='homepage'>  
       
       <div className="main">
@@ -43,7 +44,11 @@ function Homepage() {
   
       
     </div>
+
+    
+    </>
   )
+  
 }
 
 export default Homepage

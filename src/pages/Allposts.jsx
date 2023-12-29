@@ -11,6 +11,7 @@ function AllPosts() {
         setLoader(true)
         if (posts) {
             setPosts(posts.documents)
+            // console.log(posts)
             setLoader(false)
         }
     })

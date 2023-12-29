@@ -35,11 +35,14 @@ function Signup() {
     <div className='signup'>
       <h1>Create Account</h1>
 
-      {error && <p> {error}</p>}
+      
 
-      <form onSubmit={handleSubmit(createAccount)}>
+      <form onSubmit={handleSubmit(createAccount)} className='signupform'>
+
+      {error && <p className='formerror'> {error}</p>}
+
         <Input
-          label='name'
+          // label='name'
           type='text'
           placeholder='Enter your name'
           {...register('name', {
@@ -47,7 +50,7 @@ function Signup() {
           })}
         />
         <Input
-          label='Email'
+          // label='Email'
           type='email'
           placeholder='Enter your email'
           {...register('email', {
@@ -55,18 +58,20 @@ function Signup() {
           })}
         />
         <Input
-          label='password'
+          // label='password'
           type='password'
           placeholder='Enter your password'
           {...register('password', { required: true })}
         />
 
         <button type='submit'>Signup</button>
+
+        <h2>
+        Already Have An Account ?<Link to='/login'>{' '}Login</Link>
+      </h2>
       </form>
 
-      <h2>
-        Already have an account<Link to='/login'>Login</Link>
-      </h2>
+      
     </div>
   );
 }

@@ -47,15 +47,17 @@ function Login() {
   return (
     <div className='Login'>
 
-      <h2>Login To Your Account</h2>
-      {
-        error && <h1 className='formerror'> {error} </h1>
-      }
+      <h2>Login to your Account</h2>
+    
 
       <form onSubmit={handleSubmit(login)} className='loginform' action="">
+    
+      {
+        error && <p className='formerror'> {error} </p>
+      }
 
       <Input 
-      label = 'Email'
+      // label = 'Email'
       type='email'
       placeholder='Enter your email'
       {
@@ -67,20 +69,22 @@ function Login() {
       />
 
          <Input 
-      label = 'password'
+      // label = 'password'
       type='password'
       placeholder='Enter your password' 
       {...register('password',{required:true})}/>
 
       <input type='submit' value={'login'}/>
 
+      <h2>Dont Have Any Account  
+        <Link to='/signup'>{' '}Signup !</Link>
+      </h2> 
+
       </form>
 
      
 
-      <h2>dont have any Account 
-        <Link to='/signup'>Signup</Link>
-      </h2>    
+        
     </div>
   )
 }

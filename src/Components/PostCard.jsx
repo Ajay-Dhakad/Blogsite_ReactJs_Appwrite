@@ -20,9 +20,10 @@ function PostCard({$id,title,featuredImage,content}) {
 <div className='postimage'>
     <img  src={service.filePreview(featuredImage)} alt={title} />
 </div>
+<div className="titlepostcard">
 <h2>{title}</h2>
 {/* <p className='content-oncard' >{parse(truncateContent(content, 1))}</p> */}
-
+</div>
 </div>
     </Link>
   )
