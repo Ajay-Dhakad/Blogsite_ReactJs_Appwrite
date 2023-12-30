@@ -5,7 +5,10 @@ function Footer() {
 
   return (
 
-   <section> 
+   <section>  
+
+    
+    <div className="footertext">© 2024 ThoughtCloud</div>
     
    </section>
   )
