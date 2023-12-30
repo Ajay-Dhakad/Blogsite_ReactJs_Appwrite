@@ -17,12 +17,13 @@ function Login() {
   const dispatch = useDispatch()
   const {register,handleSubmit} = useForm()
   const [error,seterror] = useState('')
+  const [logincomplete,setlogincomplete] = useState(false)
 
   const login = async(data) => {
 
     seterror('')
     try {
-
+        setlogincomplete(true)
       const session = await authService.login(data)
       console.log(session)
 
@@ -31,27 +32,37 @@ function Login() {
         const userData = await authService.getCurrentUser()
 
         if (userData) dispatch(authLogin(userData));
+        setlogincomplete(false)
         navigate('/')
 
       }
       
     } catch (error) {
 
+      setlogincomplete(false)
       seterror(error.message)
+      
       
     }
 
 
   }
 
+  if (logincomplete){
+    return <div className="loadercomponent"> <span className="loader"></span></div>
+  }
+
   return (
+    
+    
+
     <div className='Login'>
 
       <h2>Login to your Account</h2>
     
 
       <form onSubmit={handleSubmit(login)} className='loginform' action="">
-    
+
       {
         error && <p className='formerror'> {error} </p>
       }
@@ -85,8 +96,8 @@ function Login() {
      
 
         
-    </div>
-  )
-}
+    </div> 
+    
+  )}
 
 export default Login

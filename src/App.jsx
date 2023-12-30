@@ -12,60 +12,50 @@ function App() {
 
   const [loader, setLoader] = useState(true)
 
-  
+
   const dispatch = useDispatch()
 
   useEffect(() => {
 
     authService.getCurrentUser().then((userData) => {
 
-      console.log(userData)
+      // console.log(userData)
 
       if (userData) {
 
-        dispatch(login({ userData })) 
+        dispatch(login({ userData }))
         setLoader(false)
       }
       else {
-        dispatch(logOut())  
+        dispatch(logOut())
         setLoader(false)
       }
     })
-      // .finally(() =>
-        
-      // )
+    // .finally(() =>
 
- }, [])
- 
- return  (
-   
- <>
+    // )
 
- 
- 
- 
- <main>
- <Header/>
+  }, [])
 
-  {
+  return (
 
- !loader ? <Outlet/> : <div className='loadercomponent'> <span id="loader"></span></div>
- 
+    <>
 
-  }
+      <main>
+        <Header />
 
-  
-<Footer/>
+        {
 
-</main>
+          !loader ? <Outlet /> : <div className='loadercomponent'> <span id="loader"></span></div>
 
 
-</>
+        }
+        <Footer />
 
-  
+      </main>
+    </>
 
-    
-  ) 
+  )
 
 }
 

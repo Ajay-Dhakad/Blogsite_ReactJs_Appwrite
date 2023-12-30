@@ -12,11 +12,13 @@ function Signup() {
   const [error, seterror] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [signuploader,setsignuploader] = useState(false)
 
   const createAccount = async (data) => {
     seterror('');
 
     try {
+      setsignuploader(true)
       const userData = await authService.createAccount(data);
 
       if (userData) {
@@ -24,16 +26,20 @@ function Signup() {
 
         if (user) dispatch(authLogin(user));
 
+        setsignuploader(false)
+
         navigate('/');
       }
     } catch (error) {
       seterror(error.message);
+      setsignuploader(false)
     }
   };
 
+
   return (
     <div className='signup'>
-      <h1>Create Account</h1>
+      <h2>Create Account</h2>
 
       
 
@@ -70,6 +76,9 @@ function Signup() {
         Already Have An Account ?<Link to='/login'>{' '}Login</Link>
       </h2>
       </form>
+
+      { signuploader && <div className="loadercomponent"> <span className="loader"></span></div>}
+
 
       
     </div>
