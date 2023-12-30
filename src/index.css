@@ -301,6 +301,13 @@ a{
   
 }
 
+.postforminputs input[type=text]{
+
+  color:black;
+  font-size: 22px;
+
+}
+
 @media (max-width:440px) {
   .postforminputs input{
     width: 100%;
@@ -407,11 +414,14 @@ input[type="file"]::file-selector-button:active {
   animation-duration: .5s;
   animation-fill-mode:both;
   animation-iteration-count: 1;
+  color: black;
   background-color:rgb(255, 255, 255) ;
   gap: 10px;
 
 
 }
+
+
 
 .post img{
 
