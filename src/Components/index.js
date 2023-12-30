@@ -1,5 +1,5 @@
 import logoutBtn from "./Header/logoutBtn";
-import Container from "./container/Container";
+import Container from "./Container/Container.jsx";
 import Logo from "./Logo/Logo";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -20,7 +20,8 @@ export {
     Footer,
     logoutBtn,
     Logo,
-    Container,Button,
+    Container,
+    Button,
     Input,
     Login,
     PostCard,
