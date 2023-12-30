@@ -59,8 +59,8 @@ export default function Post() {
                         </div>
                     )}
                
-                <div className="post-title">
-                    <h1 className="text-2xl font-bold">{post.title}</h1>
+                <div className="posttitletextbox">
+                    <h2>{post.title}</h2>
                 </div>
                 <div className="content">
 
