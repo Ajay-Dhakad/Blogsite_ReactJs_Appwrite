@@ -92,7 +92,7 @@ export default function PostForm({ post }) {
                 <Input
                     // label="Slug :"
                     placeholder="Your Post's Slug"
-                    className="mb-4"
+                    // className="mb-4"
                     disabled
                     {...register("slug", { required: true })}
                     onInput={(e) => {

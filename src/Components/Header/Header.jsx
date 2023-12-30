@@ -57,7 +57,13 @@ function Header() {
 
   return (
     <>
-    <header>
+    <header onClick={() => {
+
+      if(toggleNav===true){
+        setToggleNav(false)
+      }
+
+    }}>
       <Container> 
       <div className="webname">
     <div id='logo'>
