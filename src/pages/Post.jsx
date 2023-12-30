@@ -60,7 +60,7 @@ export default function Post() {
                     )}
                
                 <div className="posttitletextbox">
-                    <h2>{post.title}</h2>
+                    <h4>{post.title}</h4>
                 </div>
                 <div className="content">
 
