@@ -1140,7 +1140,10 @@ text-decoration: underline;
   align-items: center;
   justify-content: center;
   /* background-color: rgb(31, 29, 29); */
-  background-color: transparent;
+
+  /* background-color: transparent; */
+  background: linear-gradient(179.4deg, rgb(12, 20, 69) -16.9%, rgb(71, 30, 84) 119.9%);
+
   position: absolute; 
   
   color: white;
