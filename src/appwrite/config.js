@@ -18,7 +18,7 @@ export class Service{
 
     }
 
-    async createPost({title,slug,content,featuredImage,status,userid}){
+    async createPost({title,slug,content,featuredImage,status,userId}){
 
             try {
                 
@@ -32,7 +32,7 @@ export class Service{
                     content,
                     featuredImage,
                     status,
-                    userid
+                    userId
                 }
             )
 

@@ -1296,4 +1296,104 @@ text-decoration: underline;
 
 }
 
+.postcruds{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  gap: 5px;
+  right: 20px;
+  top: 20px;
+  /* border: 2px solid red; */
+}
+
+.postcruds button{
+  width: 80px;
+  height: 50%;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none; 
+  transition: .2s ease-in;
+
+ 
+}
+
+ @media (max-width: 680px) {
+
+  .postcruds button{
+
+    transform: scale(.7);
+  }
+
+  .postcruds{
+    gap: 0px;
+    top: 0px;
+    right:0px;
+    /* border: 2px solid red; */
+
+  }
+    
+  }
+
+.postcruds button:nth-child(1){
+
+  background-color: rgb(15, 191, 15);
+
+  &:hover{
+    background-color: #0b9615;
+
+}
+
+
+
+}
+.postcruds button:nth-child(2){
+
+  
+  background-color: rgb(255, 9, 9);
+  &:hover{
+    background-color: #890a0a;
+  }
+
+ 
+ 
+  }
+
+  .editpostimage  img{
+      width: 90%;
+      text-align: center;
+      
+
+
+    
+  }
+
+  .labelinput{
+
+    font-size: 23px;
+    
+  }
+
+  @media (max-width:595px) {
+
+    .labelinput{
+      font-size: 17px;
+    }
+
+    input[type=file]{
+      width: 80%;
+      height: 40px;
+    }
+   
+    
+    
+  }
+
+  
+
+
 

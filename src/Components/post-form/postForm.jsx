@@ -5,6 +5,7 @@ import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+
 export default function PostForm({ post }) {
 
     const [posting,setposting] = useState(false)
@@ -103,7 +104,7 @@ export default function PostForm({ post }) {
                 <div className="imagepostform">
                     {/* <p>Upload Thumbnail Image :</p> */}
                 <Input
-                    label="Upload Image : "
+                    label={!post ? 'Upload Image:' : 'Change Image:'}
                     type="file"
                     // value='jbsbavd'
                     className="mb-4"
@@ -112,23 +113,25 @@ export default function PostForm({ post }) {
                 />
                 </div>
 
+                {post && (
+
+
+<div className="editpostimage">   
+    <img
+
+        src={appwriteService.filePreview(post.featuredImage)}
+        
+        alt={post.title}
+        className="rounded-lg"
+    />
+</div>
+)}
+
                 <RTE  name="content" control={control} defaultValue={getValues("content")} />
             </div>
             <div className="fileandsubmit">
                
-                {post && (
-
-
-                    <div className="w-full mb-4">
-                        <img
-                   
-                            src={appwriteService.filePreview(post.featuredImage)}
-                            
-                            alt={post.title}
-                            className="rounded-lg"
-                        />
-                    </div>
-                )}
+               
                 <Select
                     options={["active", "inactive"]}
                     label="Post Visibility"
