@@ -417,6 +417,11 @@ input[type="file"]::file-selector-button:active {
 
 }
 
+.postform input[type=text]{
+  color: black;
+  background-color: white;
+}
+
 .fileandsubmit{
 
   display: flex;
