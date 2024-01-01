@@ -912,7 +912,7 @@ header ul{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
   flex-wrap: wrap;
   
   gap: 1rem;
@@ -1415,6 +1415,7 @@ text-decoration: underline;
     backdrop-filter: blur(20px);
     /* display: none; */
     transition: .2s;
+    padding:0 2px;
 
   }
 
@@ -1437,7 +1438,6 @@ text-decoration: underline;
     background-color: red;
   }
 
-  .postimage{
-    overflow: hidden;
-  }
+  
+  
   

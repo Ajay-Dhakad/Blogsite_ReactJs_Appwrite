@@ -10,7 +10,7 @@ function AllPosts() {
     appwriteService.getPosts([]).then((posts) => {
         setLoader(true)
         if (posts) {
-            setPosts(posts.documents)
+            setPosts(posts.documents.reverse())
             // console.log(posts)
             setLoader(false)
         }
@@ -28,7 +28,7 @@ function AllPosts() {
                 {posts.map((post) => (
                     <div key={post.$id} className='p-2 w-1/4'>
                         <PostCard {...post} />
-                        {console.log(post)}
+                        
                     </div>
                     
                 ))}

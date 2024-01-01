@@ -45,19 +45,6 @@ function Homepage() {
       
     </div>
 
-    <div className='staranimation'>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
     
     </>
   )
