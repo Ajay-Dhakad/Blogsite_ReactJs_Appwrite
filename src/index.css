@@ -421,6 +421,10 @@ input[type="file"]::file-selector-button:active {
   color: black;
   background-color: white;
 }
+.postforminputs input:disabled{
+  background-color: rgb(152, 150, 150);
+  color: rgb(223, 217, 217);
+}
 
 .fileandsubmit{
 
