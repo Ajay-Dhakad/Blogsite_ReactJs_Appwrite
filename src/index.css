@@ -1403,6 +1403,41 @@ text-decoration: underline;
   }
 
   
+  .postdateoncard{
 
+    position: absolute;
+    color: white;
+    bottom: 45px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #94171700;
+    left: 0;
+    backdrop-filter: blur(20px);
+    /* display: none; */
+    transition: .2s;
 
+  }
 
+  .postcard:hover{
+
+    .postdateoncard{
+      background-color: rgba(26, 255, 26, 0.516);
+      display: block;
+      
+    }
+
+    .red{
+      background-color: rgb(193, 7, 7);
+    }
+
+    
+  }
+
+  .red{
+    background-color: red;
+  }
+
+  .postimage{
+    overflow: hidden;
+  }
+  
