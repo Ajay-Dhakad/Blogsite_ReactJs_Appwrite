@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function Homepage() {
 
     const user = useSelector(state => state.auth.status)
-    // console.log(user)
+    
   return (
   <> 
     <div className='homepage'>  

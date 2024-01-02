@@ -24,7 +24,7 @@ function Signup() {
       if (userData) {
         const user = await authService.getCurrentUser();
 
-        if (user) dispatch(authLogin(user));
+        if (user) dispatch(authLogin({user}));
 
         setsignuploader(false)
 

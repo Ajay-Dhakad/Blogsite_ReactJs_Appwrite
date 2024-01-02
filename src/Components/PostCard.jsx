@@ -10,7 +10,7 @@ function PostCard({$id,title,featuredImage,content,$createdAt,userId,postedby}) 
  
 
  useEffect(() => {
-  console.log(user)
+  
   if (user){
   if (user.$id === userId ){
 

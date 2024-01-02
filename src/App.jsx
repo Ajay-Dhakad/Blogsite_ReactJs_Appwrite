@@ -13,6 +13,8 @@ function App() {
 
   const [loader, setLoader] = useState(true)
 
+  const selector = useSelector((state) => state.auth.userData)
+
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -22,6 +24,7 @@ function App() {
       if (userData) {
 
         dispatch(login({ userData }))
+  
       
         setLoader(false)
       }
