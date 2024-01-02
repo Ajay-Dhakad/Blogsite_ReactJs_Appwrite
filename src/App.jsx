@@ -7,13 +7,11 @@ import Footer from './Components/Footer/Footer'
 import { useDispatch } from 'react-redux'
 import authService from './appwrite/auth'
 import { login, logOut } from './Store/authSlice.js'
-import {useSelector} from 'react-redux'
 
 function App() {
 
   const [loader, setLoader] = useState(true)
 
-  const selector = useSelector((state) => state.auth.userData)
 
   const dispatch = useDispatch()
 
@@ -24,7 +22,6 @@ function App() {
       if (userData) {
 
         dispatch(login({ userData }))
-  
       
         setLoader(false)
       }
@@ -33,10 +30,7 @@ function App() {
         setLoader(false)
       }
     })
-    // .finally(() =>
-
-    // )
-
+   
   }, [])
 
   return (
