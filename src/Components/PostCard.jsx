@@ -10,7 +10,7 @@ function PostCard({$id,title,featuredImage,content,$createdAt,userId,postedby}) 
  
 
  useEffect(() => {
-  if (user === userId ){
+  if (user.$id === userId ){
 
     setpostedbyself(true)
     

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import authService from '../../appwrite/auth'
 import {logoutBtn as Logout,Logo, Container} from '../index'
 import { Link } from 'react-router-dom'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,NavLink} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 
@@ -84,11 +84,18 @@ function Header() {
       navItems.map((item) => (
 
        item.active ? (
-
+        
+       
         <li key={item.name}>
-          <button onClick={() => navigate(item.slug)}>{item.name} </button>
-        </li>
 
+          <button>
+          <NavLink  key={item.name} to={item.slug} className={({isActive}) => (isActive ? 'active' : 'notActive')} >
+          
+            {item.name} 
+            </NavLink>
+            </button>
+        </li>
+       
        ) : null
 
        ))

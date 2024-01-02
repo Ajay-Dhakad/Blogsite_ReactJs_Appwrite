@@ -25,7 +25,7 @@ function Login() {
     try {
         setlogincomplete(true)
       const session = await authService.login(data)
-      console.log(session)
+      // console.log(session)
 
       if (session){
 

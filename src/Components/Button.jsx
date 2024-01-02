@@ -8,6 +8,6 @@ export default function Button({
     ...props
 }) {
   return (
-    <button className={`button ${bgcolor} ${textcolor}`} {...props}  >{children}</button>
+    <button className={`button  ${textcolor}`} {...props}  >{children}</button>
   )
 }
