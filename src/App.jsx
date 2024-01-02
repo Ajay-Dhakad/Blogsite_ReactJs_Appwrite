@@ -7,23 +7,22 @@ import Footer from './Components/Footer/Footer'
 import { useDispatch } from 'react-redux'
 import authService from './appwrite/auth'
 import { login, logOut } from './Store/authSlice.js'
+import {useSelector} from 'react-redux'
 
 function App() {
 
   const [loader, setLoader] = useState(true)
-
 
   const dispatch = useDispatch()
 
   useEffect(() => {
 
     authService.getCurrentUser().then((userData) => {
-
-      // console.log(userData)
-
+      
       if (userData) {
 
         dispatch(login({ userData }))
+      
         setLoader(false)
       }
       else {

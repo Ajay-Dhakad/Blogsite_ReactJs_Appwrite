@@ -4,29 +4,29 @@ import service from '../appwrite/config'
 import {useSelector} from 'react-redux'
 
 function PostCard({$id,title,featuredImage,content,$createdAt,userId,postedby}) {
- var user = useSelector(state => state.auth.userData)
- 
+  const user = useSelector(state => state.auth.userData)
+
  const [postedbyself,setpostedbyself] = useState(false)
  
 
  useEffect(() => {
+  console.log(user)
+  if (user){
   if (user.$id === userId ){
 
     setpostedbyself(true)
-    
-  
-   }
- },[])
+   }}
+ },[user])
 
 
 
-  const truncateContent = (content, numWords) => {
-    if (content !== null) {
-      return content.split(' ').slice(0, numWords).join(' ');
-    }
+  // const truncateContent = (content, numWords) => {
+  //   if (content !== null) {
+  //     return content.split(' ').slice(0, numWords).join(' ');
+  //   }
 
-    return ''; 
-  };  
+  //   return ''; 
+  // };  
 
 
   return ( 
