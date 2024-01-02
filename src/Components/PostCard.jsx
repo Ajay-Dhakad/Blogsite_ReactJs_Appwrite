@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux'
 
 function PostCard({$id,title,featuredImage,content,$createdAt,userId,postedby}) {
  var user = useSelector(state => state.auth.userData)
- user=user.$id
+ 
  const [postedbyself,setpostedbyself] = useState(false)
  
 
