@@ -871,6 +871,7 @@ header ul{
   justify-content: center;
   list-style: none;
   height: 100%;
+  /* color: red; */
 }
 
 .button{
