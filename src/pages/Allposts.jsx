@@ -12,7 +12,10 @@ function AllPosts() {
         if (posts) {
             setPosts(posts.documents.reverse())
             // console.log(posts)
-            setLoader(false)
+
+            setTimeout(() => {
+                setLoader(false)
+            }, 1000); 
         }
     })
 },[])
