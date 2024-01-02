@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom'
 import service from '../appwrite/config'
 import {useSelector} from 'react-redux'
 
-function PostCard({$id,title,featuredImage,content,$createdAt,userId,name}) {
- const user = useSelector(state => state.auth.userData)
- const [postedby,setpostedby] = useState(false)
+function PostCard({$id,title,featuredImage,content,$createdAt,userId,postedby}) {
+ var user = useSelector(state => state.auth.userData)
+ user=user.$id
+ const [postedbyself,setpostedbyself] = useState(false)
  
 
  useEffect(() => {
-  if (user.$id === userId ){
+  if (user === userId ){
 
-    setpostedby(true)
+    setpostedbyself(true)
     
   
    }
@@ -34,13 +35,13 @@ function PostCard({$id,title,featuredImage,content,$createdAt,userId,name}) {
 <div className='postcard'>
 
 <div className='postimage'>
-    <img  src={service.filePreview(featuredImage)} alt={title} />
+ <img  src={service.filePreview( featuredImage)} alt={title} />
 </div>
 <div className="titlepostcard">
 <h2>{title}</h2>
 {/* <p className='content-oncard' >{parse(truncateContent(content, 1))}</p> */}
 </div>
-<div className={`postdateoncard ${postedby && 'red'}` } ><p>Posted on : {$createdAt.slice(0,10).split('-').reverse().join('-')} {postedby && 'By You'}</p></div>
+<div className={`postdateoncard ${postedbyself && 'red'}` } ><p>Posted on : {$createdAt.slice(0,10).split('-').reverse().join('-')} {postedbyself ? 'By You':'by '+ postedby}</p></div>
 </div>
     </Link>
   )

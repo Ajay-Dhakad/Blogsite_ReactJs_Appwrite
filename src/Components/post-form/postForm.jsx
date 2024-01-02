@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 
 export default function PostForm({ post }) {
 
+
     const [posting,setposting] = useState(false)
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
@@ -48,7 +49,7 @@ export default function PostForm({ post }) {
             if (file) {
                 const fileId = file.$id;
                 // data.featuredImage = fileId;
-                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id,featuredImage: fileId});
+                const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id,featuredImage: fileId,postedby:userData.name});
 
                 setposting(false)   
 
